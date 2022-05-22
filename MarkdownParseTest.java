@@ -23,7 +23,25 @@ public class MarkdownParseTest {
     @Test
     public void snippet1Test() {
        Path fileName = Path.of("snippet1Tester.md");
+       String readString = Files.readString(fileName);
+       ArrayList<String> links = MarkdownParse.getLinks(readString);
+       assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), links);
     }
-
-    // Testing
+    
+    @Test
+    public void snippet2Test() {
+       Path fileName = Path.of("snippet2Tester.md");
+       String readString = Files.readString(fileName);
+       ArrayList<String> links = MarkdownParse.getLinks(readString);
+       assertEquals(List.of("a.com(())", "example.com"), links);
+    }
+    
+    @Test
+    public void snippet3Test() {
+       Path fileName = Path.of("snippet3Tester.md");
+       String readString = Files.readString(fileName);
+       ArrayList<String> links = MarkdownParse.getLinks(readString);
+       assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), links);
+    }
+    
 }
