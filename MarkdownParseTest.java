@@ -21,7 +21,7 @@ public class MarkdownParseTest {
     }
     
     @Test
-    public void snippet1Test() {
+    public void snippet1Test() throws IOException {
        Path fileName = Path.of("snippet1Tester.md");
        String readString = Files.readString(fileName);
        ArrayList<String> links = MarkdownParse.getLinks(readString);
@@ -29,7 +29,7 @@ public class MarkdownParseTest {
     }
     
     @Test
-    public void snippet2Test() {
+    public void snippet2Test() throws IOException {
        Path fileName = Path.of("snippet2Tester.md");
        String readString = Files.readString(fileName);
        ArrayList<String> links = MarkdownParse.getLinks(readString);
@@ -37,7 +37,7 @@ public class MarkdownParseTest {
     }
     
     @Test
-    public void snippet3Test() {
+    public void snippet3Test() throws IOException {
        Path fileName = Path.of("snippet3Tester.md");
        String readString = Files.readString(fileName);
        ArrayList<String> links = MarkdownParse.getLinks(readString);
