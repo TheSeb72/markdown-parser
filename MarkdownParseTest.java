@@ -19,6 +19,11 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(readString);
         assertEquals(List.of("https://something.com", "some-thing.html"), links);
     }
+    
+    @Test
+    public void snippet1Test() {
+       Path fileName = Path.of("snippet1Tester.md");
+    }
 
     // Testing
 }
